@@ -6,6 +6,10 @@ b) Os últimos 4 colocados da tabela;
 c) Lista em ordem alfabética;
 d) Em que posição está o time da Chapecoense.
 '''
+'''
+@Guilherme Rosa
+Minha resolução: 
+'''
 # CBF = Campeonato Brasileiro de Futebol
 # Lista de 2019 em:
 # https://pt.wikipedia.org/wiki/Lista_dos_20_primeiros_colocados_do_Ranking_Nacional_de_Clubes_por_ano
@@ -27,6 +31,7 @@ print(f'* Os últimos 4 colocados: {cbf[-4:]}')
 # c)
 print(f'* Lista em ordem alfabética: \n{sorted(cbf)}')
 # d)
-# Variável para imprimir a colocação do Chapecoense
+# Variável para imprimir a colocação do Chapecoense,
+# uso de variável por questão de estética
 i = cbf.index('Chapecoense')
 print(f'* Chapecoense está em {i + 1}º lugar.')
