@@ -5,6 +5,10 @@ a) Quantas vezes apareceu o valor 9;
 b)Em que posição foi digitado o primeiro valor 3;
 c) Quais foram os números pares.
 '''
+'''
+@Guilherme
+Minha resolução antes de ver o vídeo
+'''
 # Números inteiros a serem lidos:
 n1 = int(input('Digite um número: '))
 n2 = int(input('Digite outro número: '))
@@ -36,3 +40,16 @@ if tempar != 0:
 # Se não há, logo:
 else:
     print('Não há número par.')
+'''
+Resolução do @Guanabara
+núm = (int(input('Digite um número')), int(input('Digite um número')), int(input('Digite um número')), 
+      int(input('Digite um número')), int(input('Digite um número')))
+print(f'O número 9 apareceu {núm.count(9)} vez(es).') 
+if 3 in núm:
+    print(f'O primeiro valor  3 foi digitado no índice {núm.index(3)} da tupla.')
+else:
+    print('O valor 3 não foi digitado.')
+for  n in núm:
+    if n % 2 == 0:
+        print(n, end=' ')
+'''
