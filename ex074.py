@@ -4,6 +4,10 @@ Mostrando:
 a) A listagem dos números;
 b) O maior e o menor número.
 '''
+'''
+@Guilherme
+Minha primeira resolução, sem olhar os vídeos de exercícios: 
+'''
 from random import randint
 # Variáveis simples receberam números aleatórios, dado que: tuplas são imutáveis
 n1 = randint(0, 100)
@@ -30,3 +34,12 @@ for ind, c in enumerate(tupla):
         elif c < maior and c < menor:
             menor = c
 print(f'O maior número é {maior} e o menor número é {menor}.')
+
+'''
+Resolução do @Guanabara:
+from random import randint
+numeros = (randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10))
+print(f'Os valores sorteados foram: {numeros}')
+print(f'O maior valor foi: {max(numeros)}')
+print(f'O menor valor foi: {min(numeros)}')
+'''
