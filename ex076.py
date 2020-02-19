@@ -3,6 +3,10 @@ Programa com tupla única que contém nome e preço dos produtos
 Mostrando:
 a) Listagem dos preços organizando-os de forma tabular.
 '''
+'''
+@Guilherme
+Minha resolução antes de ver os vídeos dos exercícios
+'''
 tupla = ('Pão', 2.00, 'Suco', 2.50, 'Cerveja Skol', 5.50, 'Chocolate', 4.90)
 # a) repetição genérica para funcionar para qualquer tupla
 # A variável auxiliar 'c' irá começar no índice zero, o início, e percorrerá até o comprimento da tupla,
@@ -17,3 +21,13 @@ for c in range(0, len(tupla), 2):
     # Caso contrário, o Índice 'c' será subtraído com 1
     else:
         print(f'R$ {tupla[c - 1]:3}')
+'''
+Resolução do @Guanabara de forma resumida
+
+tupla = ('Pão', 2.00, 'Suco', 2.50, 'Cerveja Skol', 5.50, 'Chocolate', 4.90)
+for pos in range(0, len(tupla)):
+    if pos % 2 == 0:
+        print(f'{tupla[pos]:.<30}', end='')
+    else:
+        print(f'{tupla[pos]:>7.2f}')
+'''
