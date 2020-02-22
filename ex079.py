@@ -30,3 +30,4 @@ while True:
     if perg not in 'NnSs':
         print('Respota inválida!')
 print(f'Lista em ordem crescente: {sorted(lista)}')
+#
