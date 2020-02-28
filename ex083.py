@@ -19,8 +19,12 @@ for l in expres:
     elif l == '/':
         divi = 1
 print(lista)
-if lista in '()':
-    if lista.count('(') == lista.count(')'):
-
-    else:
-        print('Expressão errada!')
+if '012345678910' in lista and '+-/*' in lista:
+        if '()' in lista:
+            if lista.count('(') == lista.count(')'):
+                if (lista.index(0, '(') and lista.index(-1, ')')) or lista.index(0, ')'):
+                    print('Expressão inválida!')
+            else:
+                print('Expressão inválida!')
+else:
+    print('Expressão inválida!')
