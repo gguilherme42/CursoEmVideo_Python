@@ -25,3 +25,20 @@ while x < 5:
                 break
     x += 1
 print(f'Lista ordenada sem o sorted(): {lista}')
+
+'''
+#Resoução do Guanabara:
+lista = []
+for c in range(0, 5):
+    n = int(input('Digite um número: '))
+    if c == 0 or n > c:
+        lista.append(n)
+    else: 
+        pos = 0
+        while pos < len(lista):
+            if n <= lista[pos]:
+                lista.insert(pos, n)
+                break
+            pos += 1
+pritn(lista)
+'''
