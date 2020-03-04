@@ -7,27 +7,16 @@ a) Exibição de todos os valores único, digitados em ordem crescente.
 #@Guilherme
 lista = []
 while True:
-    num = int(input('Digite um número: '))
-    # Verificação caso o número digitado já esteja na lista
-    while True:
-        # Condição para o começo do programa
-        if lista == []:
-            break
-        # Se o número digitado já estiver na lista, então:
-        if num in lista:
-            print('Número repetido!', end='')
-            num = int(input('Digite um número: '))
-        # Do contrário:
-        else:
-            break
-    # Adição do número digitado na lista
-    lista.append(num)
-    # Pergunta para continuação do programa
-    perg = str(input('Quer continuar? [S/N] ')).strip()[0].upper()
-    # Consequências da resposta
-    if perg in 'Nn':
+    n = int(input('Digite um número: '))
+    # Verificando se o número digitado já está na lista
+    if n not in lista:
+        lista.append(n)
+    else:
+        print('Valor repetido! ')
+    r = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+    # Caso digite 'N':
+    if r in 'N':
         break
-    if perg not in 'NnSs':
-        print('Respota inválida!')
-print(f'Lista em ordem crescente: {sorted(lista)}')
-#
+print(lista)
+# a)
+print(sorted(lista))
