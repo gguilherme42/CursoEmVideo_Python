@@ -34,3 +34,6 @@ Lista de números pares:
 Lista de números ímpares:
 {impar}
 ''')
+# Resoulução similar a do Guanabra, no entanto ele não coloca os valores
+# da lista de começo em outras listas. Primeiro ele cria uma, lê e depois adiciona
+# os valores.
