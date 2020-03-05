@@ -22,5 +22,5 @@ for x in range(0, 7):
 números = [[par[:]], [ímpar[:]]]
 print('-'*30)
 print(f'Números: {números}')
-print(f'Pares: {números[0]}')
-print(f'Ímpares: {números[1]}')
+print(f'Pares: {sorted(números[0])}')
+print(f'Ímpares: {sorted(números[1])}')
