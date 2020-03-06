@@ -2,16 +2,17 @@
 Exercício 087
 
 Aprimore o desafio anterior (ex 086), mostrando no final:
-a) A soma de todos os valores digitados;
+a) A soma de todos os valores pares digitados;
 b) A soma de todos os valores da terceira coluna:
 c) O maior valor da segunda linha.
 '''
 matriz = [list(range(0, 3)), list(range(0, 3)), list(range(0, 3))]
-soma = soma3 = 0
+somap = soma3 = 0
 for l in range(0, 3):
     for c in range(0, 3):
         n = int(input(f'Digite um número para [{l}, {c}]: '))
-        soma += n
+        if n % 2 == 0:
+            somap += n
         # Soma dos números da terceira coluna:
         if c == 2:
             soma3 += n
@@ -25,7 +26,7 @@ for l in range(0, 3):
     print()
 print('-' * 30)
 # a)
-print(f'A soma de todos os valores digitados é: {soma}')
+print(f'A soma de todos os valores digitados é: {somap}')
 # b)
 print(f'A soma de todos os valores digitados é: {soma3}')
 # c)
