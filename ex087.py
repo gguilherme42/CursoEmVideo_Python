@@ -6,29 +6,23 @@ a) A soma de todos os valores digitados;
 b) A soma de todos os valores da terceira coluna:
 c) O maior valor da segunda linha.
 '''
-dados = []
-matriz = []
+matriz = [list(range(0, 3)), list(range(0, 3)), list(range(0, 3))]
 soma = soma3 = 0
 for l in range(0, 3):
     for c in range(0, 3):
-        n = int(input('Digite um número: '))
+        n = int(input(f'Digite um número para [{l}, {c}]: '))
         soma += n
+        # Soma dos números da terceira coluna:
         if c == 2:
             soma3 += n
-        dados.append(n)
-    matriz.append(dados[:])
-    # Varre-se a lista 'dados' porque necessita de novos elementos, sem os anteriores
-    # para a nova linha da matriz
-    dados.clear()
+        matriz[l][c] = n
 # Matriz 3x3 na tela
 print('-' * 30)
 print(f'======{" MATRIZ 3 X 3 ":^4}=====')
-for x in matriz:
-    # 'x' vira uma lista, portando, deve-se percorre-lô
-    for ind, n in enumerate(x):
-        print(f'( {n:^4} ) ', end='')
-        if ind == 2:
-            print()
+for l in range(0, 3):
+    for c in range(0, 3):
+        print(f'( {matriz[l][c]:^5} ) ', end='')
+    print()
 print('-' * 30)
 # a)
 print(f'A soma de todos os valores digitados é: {soma}')
