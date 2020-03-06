@@ -10,13 +10,12 @@ matriz = [list(range(0, 3)), list(range(0, 3)), list(range(0, 3))]
 somap = soma3 = 0
 for l in range(0, 3):
     for c in range(0, 3):
-        n = int(input(f'Digite um número para [{l}, {c}]: '))
-        if n % 2 == 0:
-            somap += n
-        # Soma dos números da terceira coluna:
+        matriz[l][c] = int(input(f'Digite um número para [{l}, {c}]: '))
+        if matriz[l][c] % 2 == 0:
+            somap += matriz[l][c]
+        # Soma dos números da terceira coluna ([2]):
         if c == 2:
-            soma3 += n
-        matriz[l][c] = n
+            soma3 += matriz[l][c]
 # Matriz 3x3 na tela
 print('-' * 30)
 print(f'======{" MATRIZ 3 X 3 ":^4}=====')
