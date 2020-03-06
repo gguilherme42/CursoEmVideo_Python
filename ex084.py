@@ -35,6 +35,7 @@ while True:
 print('-'*30)
 # a)
 print(f'Pessoas cadastradas: \n{pessoas}')
+# Total de pessoal é igual ao comprimento da lista.
 print(f'Total de pessoas cadastradas: {len(pessoas)}')
 # b)
 print(f'Total de pessoas pesadas: {maisp}')
