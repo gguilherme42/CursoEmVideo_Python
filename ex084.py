@@ -13,7 +13,7 @@ leve: 60kg
 
 pessoas = []
 p = []
-totp = maisl = maisp = 0
+maisl = maisp = 0
 while True:
     p.append(str(input('Nome da pessoa: ')))
     p.append(int(input('Peso da pessoa: [Kg]')))
@@ -28,7 +28,6 @@ while True:
     # Limpando a lista
     p.clear()
     # Quantidade de pessoas cadastradas
-    totp += 1
     perg = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
     # Sáida do loop
     if perg in 'N':
@@ -36,7 +35,7 @@ while True:
 print('-'*30)
 # a)
 print(f'Pessoas cadastradas: \n{pessoas}')
-print(f'Total de pessoas cadastradas: {totp}')
+print(f'Total de pessoas cadastradas: {len(pessoas)}')
 # b)
 print(f'Total de pessoas pesadas: {maisp}')
 # c)
