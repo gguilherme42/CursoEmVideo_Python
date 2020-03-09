@@ -9,50 +9,66 @@ notas de cada aluno individualmente.
 Obs: Três níveis dentro de uma lista.
 '''
 alunos = []
-dados = []
 notas = []
 media = soma = 0
 while True:
     nome = str(input('Nome do aluno: '))
-    dados.append(nome)
     for n in range(0, 2):
-        n1 = int(input(f'Digite a {n}ª nota: '))
+        # Validação da nota, nota máx. é 10.
+        while True:
+            n1 = float(input(f'Digite a {n + 1}ª nota: [0 à 10] '))
+            if n1 < 0 or n1 > 10:
+                print('Nota inválida!')
+            else:
+                break
         notas.append(n1)
-        # Soma das notas
         soma += n1
-    # Adição das notas aos dados do aluno
-    dados.append(notas[:])
-    # Média:
-    # A média é igual a soma das notas, divido pela quantidade de notas
-    media = soma / len(notas)
-    # Adição da média aos dados do aluno
-    dados.append(media)
-    # Adição do aluno ao conjunto de alunos
-    alunos.append(dados[:])
-    # Limpando a lista de notas
+        media = soma / (n + 1)
+    soma = 0
+    # Cadastrando o aluno dentro da lista 'alunos'
+    alunos.append([nome, [notas[:]], media])
+    # Varre-se os dados de 'dados' e 'notas'
     notas.clear()
-    # Limpando os dados do aluno cadastrado
-    dados.clear()
-    perg = str(input('Quer continuar? [S/N]')).strip().upper()[0]
+    # Validação da resposta para continuar
+    while True:
+        perg = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+        if perg in 'N':
+            break
+        elif perg in 'S':
+            break
+        elif perg not in 'S':
+            print('Resposta inválida!')
     if perg in 'N':
         break
+# -----------------
+# Boletim na tela
 print('=' * 35)
-print(f' {"BOLETIM":^10} ')
-for b in alunos:
-    for i, a in enumerate(b):
-        if i != 1:
-            if i == 0:
-                print(f'Nome: {a} ', end='')
-            elif i == 2:
-                print(f'Média: {a} \n')
-perg1 = str(input('Quer ver as notas separadamente? [S/N]'))
+print()
+print('-' * 35)
+print(f' {"BOLETIM":^25} ')
+print('-' * 35)
+print(f'{"Nº":<10}{"NOME":<10}{"MÉDIA":>10}')
+for i, a in enumerate(alunos):
+    print(f'{i + 1:<10}{a[0]:<10}{a[2]:>10.1f}')
+print('-' * 35)
 print('=' * 35)
-if perg1 not in 'N':
-    print('  NOTAS  ')
-    for b in alunos:
-        for i, a in enumerate(b):
-            if a != 2:
-                if i == 0:
-                        print(f'Nome: {a} ', end='')
-                elif i == 1:
-                        print(f'Nota: {a} \n')
+# ----------------
+# Notas
+# Validação da resposta da pergunta
+while True:
+    perg1 = str(input('Quer ver as notas individuais? [S/N] ')).strip().upper()[0]
+    if perg1 in 'S':
+        # Validação do aluno
+        while True:
+            al = int(input('De qual aluno? 1, 2... '))
+            if al <= 0 or (al - 1) > len(alunos):
+                print('Resposta inválida!')
+            else:
+                print('-' * 35)
+                print(f'{"NOTAS":^25}')
+                print('-' * 35)
+                print(f'{"Nº":<10}{"ALUNO":<10}{"NOTA":>10}')
+                print(f'{al:<10} {alunos[al - 1][0]} {alunos[al - 1][1]}')
+                break
+    if perg1 in 'N':
+        break
