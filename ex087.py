@@ -25,10 +25,11 @@ for l in range(0, 3):
     print()
 print('-' * 30)
 # a)
-print(f'A soma de todos os valores digitados é: {somap}')
+print(f'A soma de todos os valores pares digitados é: {somap}')
 # b)
-print(f'A soma de todos os valores digitados é: {soma3}')
+print(f'A soma de todos os valores digitados na terceira coluna é: {soma3}')
 # c)
+# Segunda linha = matriz[1]
 print(f'O maior valor da segunda linha  é: {max(matriz[1])}')
 
 
