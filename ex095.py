@@ -7,6 +7,7 @@ jogador.
 futebol = {}
 jogadores = []
 gol = []
+
 while True:
     futebol['Nome'] = str(input('Nome do jogador(a): '))
     # Validação das partidas.
@@ -43,6 +44,7 @@ print(f'{"Nº":<}  {"NOME":<10}{"PARTIDAS":<10}{"TOTAL DE GOLS":>}')
 for i, l in enumerate(jogadores):
     print(f'{i + 1:<}º  {l["Nome"]:<10} {l["Partidas"]:<10} {l["Total de Gols"]:>}')
 print('=' * 35)
+
 
 while True:
     perg1 = str(input('Quer ver o aproveitamento de cada jogador? [S/N] ')).strip().upper()[0]
