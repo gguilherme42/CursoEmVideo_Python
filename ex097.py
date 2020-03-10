@@ -11,3 +11,15 @@ Saída:
 Olá, Mundo!
 -----------
 '''
+
+def escreva(str):
+    # Obtem-se o comprimento da string
+    t = len(str)
+    # Depois multiplica-se o traço pelo comprimento 't' da string
+    print('-' * t)
+    print(str)
+    print('-' * t)
+
+
+frase = str(input('Digite alguma frase: '))
+escreva(frase)
