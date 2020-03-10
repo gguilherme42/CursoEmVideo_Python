@@ -32,15 +32,17 @@ while True:
     perg1 = str(input('Quer ver o aproveitamento de cada jogador? [S/N] ')).strip().upper()[0]
     if perg1 in 'S':
         while True:
-            jg = int(input('Qual jogador? 1, 2... '))
+            jg = int(input('Qual jogador? (999 para sair)'))
             if jg <= 0 or (jg - 1) > len(jogadores):
                 print('Resposta inválida!')
+            elif jg == 999:
+                break
             else:
                 print('-' * 35)
                 print(f'{"APROVEITAMENTO":^25}')
                 print('-' * 35)
                 print(f'{"Nº":<10}{"NOME":<10}{"GOLS":>10}')
                 print(f'{jg:<10}{jogadores[jg - 1]["Nome"]}   {jogadores[jg - 1]["Gols"]}')
-                break
+
     if perg1 in 'N':
         break
