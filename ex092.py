@@ -8,4 +8,19 @@ anos a pessoa vai se aposentar.
 Obs: * carteira de trabalho igual à zero significa que não possuí;
 * aposentadoria depois de 35 anos de contribuição (considerada no programa).
 '''
+from datetime import date
+dicio = dict()
+dicio['nome'] = str(input('Nome: ')).strip()
+ano = int(input('Ano de nascimento: '))
+dicio['idade'] = date.today().year - ano
+dicio['CTPS'] = int(input('Carteira de trabalho (digite 0se não tem) '))
+if dicio['CTPS'] != 0:
+    dicio['Contratação'] = int(input('Ano de contratação: '))
+    dicio['Salário'] = float(input('Salário: R$'))
+    dicio['Aposentadoria'] = dicio['Contratação'] + 35
+print(dicio)
+for k, v in dicio.items():
+    print(f'{k:<}: {v:<5}')
+
+
 
