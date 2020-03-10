@@ -9,8 +9,6 @@ d) Uma lista com todas as pessoas com idade acima da média.
 '''
 pessoas = {}
 lista = []
-listaMu = []
-listaMed = []
 med = soma = 0
 while True:
     pessoas['Nome'] = str(input('Nome: '))
@@ -28,8 +26,6 @@ while True:
             print('Erro: Digite uma idade válida.')
         else:
             break
-    if pessoas['Sexo'] == 'F':
-        listaMu.append(pessoas.copy())
     lista.append(pessoas.copy())
     soma += pessoas['Idade']
     # Validação da pergunta
@@ -50,17 +46,14 @@ print(f'a) Total de pessoas cadastradas: {len(lista)}')
 print(f'b) A média de idade do grupo: {med:.1f}')
 # c)
 print('c) As mulheres cadastradas foram: ', end='')
-for i, f in enumerate(listaMu):
-    print(f'{f["Nome"]} ', end='')
-print()
+for f in lista:
+    if f['Sexo'] in 'F':
+        print(f'{f["Nome"]} ', end='')
+    print()
 # d)
+print('d) Lista de pessoas acima da média: ')
 for l in lista:
     for k, v in l.items():
-        if k == 'Idade':
-            if v > med:
-                listaMed.append(l.copy())
-print('d) Lista de pessoas acima da média: ')
-for l in listaMed:
-    for k, v in l.items():
-        print(f'{k} = {v};', end=' ')
-    print()
+        if l['Idade'] >= med:
+            print(f'{k} = {v};', end=' ')
+        print()
