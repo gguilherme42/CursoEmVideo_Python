@@ -7,6 +7,7 @@ anos a pessoa vai se aposentar.
 
 Obs: * carteira de trabalho igual à zero significa que não possuí;
 * aposentadoria depois de 35 anos de contribuição (considerada no programa).
+
 '''
 from datetime import date
 dicio = dict()
