@@ -25,28 +25,24 @@ while True:
         break
 med = soma / (len(lista))
 print(lista)
-print()
+print('='*30)
 # a)
-print('a)')
-print(f'Total de pessoas cadastradas: {len(lista)}')
-print()
+print(f'a) Total de pessoas cadastradas: {len(lista)}')
 # b)
-print('b)')
-print(f'A média de idade do grupo: {med:.1f}')
-print()
+print(f'b) A média de idade do grupo: {med:.1f}')
 # c)
-print('c)')
-for f in listaMu:
-    for k, v in f.items():
-        print(f'{k}: {v}')
-print(listaMu)
+print('c) As mulheres cadastradas foram: ', end='')
+for i, f in enumerate(listaMu):
+    print(f'{f["Nome"]} ', end='')
 print()
 # d)
-print('d)')
 for l in lista:
     for k, v in l.items():
         if k == 'Idade':
             if v > med:
                 listaMed.append(l.copy())
-print(listaMed)
-
+print('d) Lista de pessoas acima da média: ')
+for l in listaMed:
+    for k, v in l.items():
+        print(f'{k} = {v};', end=' ')
+    print()
