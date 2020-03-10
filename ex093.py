@@ -14,9 +14,8 @@ futebol['Nome'] = str(input('Nome do jogador(a): '))
 futebol['Partidas'] = int(input('Partidas jogadas: '))
 for c in range(0, futebol['Partidas']):
     gol.append(int(input(f'Gols na {c + 1}ª partida: ')))
-    totg += gol[c]
 futebol['Gols'] = gol[:]
-futebol['Total de Gols'] =totg
+futebol['Total de Gols'] = sum(gol)
 print('='*30)
 print(futebol)
 print('='*30)
@@ -26,4 +25,4 @@ print('='*30)
 print(f'O jogador(a) {futebol["Nome"]} jogou {futebol["Partidas"]} partidas.')
 for i, c in enumerate(gol):
     print(f'{"→":>5} Na {i + 1}ª partida fez: {c} gols.')
-print(f'Foi um total de {totg} gols.')
+print(f'Foi um total de {futebol["Total de Gols"]} gols.')
