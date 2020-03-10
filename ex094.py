@@ -14,13 +14,31 @@ listaMed = []
 med = soma = 0
 while True:
     pessoas['Nome'] = str(input('Nome: '))
-    pessoas['Sexo'] = str(input('Sexp: [F/M]')).strip().upper()[0]
-    pessoas['Idade'] = int(input('Idade: '))
+    # Validação do sexo
+    while True:
+        pessoas['Sexo'] = str(input('Sexp: [F/M]')).strip().upper()[0]
+        if pessoas['Sexo'] not in 'FM':
+            print('Erro: Digite F ou M')
+        else:
+            break
+    # Validação da idade
+    while True:
+        pessoas['Idade'] = int(input('Idade: '))
+        if pessoas['Idade'] <= 0:
+            print('Erro: Digite uma idade válida.')
+        else:
+            break
     if pessoas['Sexo'] == 'F':
         listaMu.append(pessoas.copy())
     lista.append(pessoas.copy())
     soma += pessoas['Idade']
-    per = str(input('Quer continuar? [S/N]')).strip().upper()[0]
+    # Validação da pergunta
+    while True:
+        per = str(input('Quer continuar? [S/N]')).strip().upper()[0]
+        if per not in 'NS':
+            print('Erro: Digite S ou N')
+        else:
+            break
     if per in 'N':
         break
 med = soma / (len(lista))
