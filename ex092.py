@@ -18,10 +18,10 @@ dicio['CTPS'] = int(input('Carteira de trabalho (digite 0se não tem) '))
 if dicio['CTPS'] != 0:
     dicio['Contratação'] = int(input('Ano de contratação: '))
     dicio['Salário'] = float(input('Salário: R$'))
-    dicio['Aposentadoria'] = dicio['Contratação'] + 35
+    dicio['Aposentadoria'] = (dicio['Contratação'] - ano) + 35
 print(dicio)
 for k, v in dicio.items():
-    print(f'{k:<}: {v:<5}')
+    print(f'- {k} tem valor {v}')
 
 
 
