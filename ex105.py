@@ -13,6 +13,16 @@ Adicione também as docstrings da função
 
 
 def notas(*n, sit=False):
+    """
+    -> Função para calcular notas, onde:
+        - É calculado a maior nota
+        - É calculado a menor nota
+        - É calculado a média
+        - É calculado a situação
+    :param *n: múltiplos parâmetros numéricos
+    :param sit: (opcional) se True, mostra a situação de acordo com as notas
+    :return: retorna um dicionário com o que foi calculado
+    """
     t = len(n)
     s = mai = 0
     men = 0
@@ -30,7 +40,8 @@ def notas(*n, sit=False):
     dicio['maior'] = mai
     dicio['menor'] = men
     dicio['média'] = med
-    if sit == True:
+    # Se 'sit' for verdadeiro
+    if sit:
         if med >= 7:
             dicio['situação'] = 'BOA'
         else:
@@ -40,3 +51,4 @@ def notas(*n, sit=False):
 
 notas(1, 2, 3, 5, 6, 7, sit=True)
 print(notas)
+
