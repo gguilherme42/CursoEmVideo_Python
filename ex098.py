@@ -17,6 +17,8 @@ def contador(i, f, p):
    print('=' * 30)
    print(f'Contagem de {i} até {f} com passo {p} ')
    if p == 0:
+   # Ou: if p < 0:
+   #    p *= - 1
        p = 1
    elif - p:
        p = abs(p)
