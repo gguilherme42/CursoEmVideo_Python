@@ -23,8 +23,9 @@ def somaPar(x):
     print(f'A soma dos pares é: {soma}')
 
 
-lista = [randint(0, 100), randint(0, 100), randint(0, 100),
-         randint(0, 100), randint(0, 100)]
+lista = list(range(0, 5))
+for c in lista:
+    lista.append(randint(0, 100))
 print(lista)
 print(f'A lista sorteda é:\n{sorteia(lista)}')
 somaPar(lista)
