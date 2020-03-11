@@ -10,28 +10,37 @@ c) uma contagem personalizada (usuário digita os parâmetros).
 Obs: passo = 0, vira 1
 passo = negativo, vira positivo
 '''
+from time import sleep
+
+
 def esc():
-    print()
     print('='*30)
 
 
 def contador(i, f, p):
+   print(f'Contagem de {i} até {f} com passo {p} ')
    if p == 0:
        p = 1
+   elif - p:
+       p = abs(p)
    if i > f:
        for l in range(i, f - p, - p):
-            print(l, end=' ')
+            print(l, end=' ', flush=True)
+            sleep(0.5)
+       print('FIM!')
+   elif i == f:
+       print('Não há contagem, pois o início e fim são iguais.')
    else:
-       for l in range(i, f + p, p):
-            print(l, end=' ')
+        for l in range(i, f + p, p):
+            print(l, end=' ', flush=True)
+            sleep(0.5)
+        print('FIM!')
 
 esc()
 # a)
-print('Contagem de 1 até 10, com passo 1: ')
 contador(1, 10, 1)
 esc()
 # b)
-print('Contagem de 10 até 0, com passo 2: ')
 contador(10, 0, 2)
 esc()
 # c)
