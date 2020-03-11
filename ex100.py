@@ -11,7 +11,7 @@ from random import randint
 def sorteia(l):
     # Repetição genérica para sortear valor em qualquer lista
     for i, v in enumerate(l):
-        v = randint(0, 100)
+        l[i] = randint(0, 100)
     return l
 
 
