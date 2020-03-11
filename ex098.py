@@ -25,6 +25,7 @@ def contador(i, f, p):
        p = abs(p)
    if i > f:
        for l in range(i, f - p, - p):
+            # Coloca-se o flush=True para não usar um 'buffer de tela'
             print(l, end=' ', flush=True)
             sleep(0.5)
        print('FIM!')
