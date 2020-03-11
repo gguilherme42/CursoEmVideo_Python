@@ -9,14 +9,18 @@ n = leiaInt('Digite um n')
 '''
 
 
-def leiaInt(f, n=0):
+def leiaInt (f):
+    ok = False
+    valor = 0
     while True:
-        n = input(f)
-        if type(n) != int:
-            print('Digite um valor inteiro')
-        else:
+        n = str(input(f))
+        if n.isnumeric():
+            valor = int(n)
+            ok = True
             break
-    return n
+        else:
+            print('Digite um valor inteiro')
+    return valor
 
 
 num = leiaInt('Digite um número: ')
