@@ -29,3 +29,12 @@ for c in lista:
 print(lista)
 print(f'A lista sorteda é:\n{sorteia(lista)}')
 somaPar(lista)
+
+'''
+função que não retorna valor:
+def sorteia(lista):
+for c in range(0, 5):
+    n = randint(0, 5)
+    lista.append(n)
+    print(f'{n} ', end='')
+'''
