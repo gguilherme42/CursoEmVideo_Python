@@ -10,15 +10,24 @@ obs: função deve ser documentada
 
 
 def fatorial(num=1, show=False):
+    """
+    -> Função para calcular o fatorial de um número
+    :param num: O número a ser calculado.
+    :param show: (opcional) Mostra ou não a conta.
+    :return: retorna o valor do fatoria de um número.
+    """
     f = 1
     if show == True:
         for c in range(num, 0, - 1):
-            print(f'{c} ', end='')
+            if c > 1:
+                print(f'{c} x ', end='')
+            else:
+                print(f'{c} =', end=' ')
             f *= c
-        return print(f'= {f}')
+        return print(f'{f}')
     else:
         for c in range(num, 0, - 1):
-            print(f'{c} ', end='')
+            print(f'{c} x ', end='')
             f *= c
         return f
 
