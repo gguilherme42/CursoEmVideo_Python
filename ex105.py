@@ -32,7 +32,7 @@ def notas(*n, sit=False):
     if sit:
         if dicio['média'] >= 7:
             dicio['situação'] = 'BOA'
-        elif 4 > dicio['média'] < 7:
+        elif dicio['média'] >= 5:
             dicio['situação'] = 'RAZOÁVEL'
         else:
             dicio['situação'] = 'RUIM'
