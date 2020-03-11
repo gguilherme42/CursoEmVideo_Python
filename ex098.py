@@ -13,11 +13,8 @@ passo = negativo, vira positivo
 from time import sleep
 
 
-def esc():
-    print('='*30)
-
-
 def contador(i, f, p):
+   print('=' * 30)
    print(f'Contagem de {i} até {f} com passo {p} ')
    if p == 0:
        p = 1
@@ -36,18 +33,16 @@ def contador(i, f, p):
             print(l, end=' ', flush=True)
             sleep(0.5)
         print('FIM!')
+   print('=' * 30)
 
-esc()
 # a)
 contador(1, 10, 1)
-esc()
 # b)
 contador(10, 0, 2)
-esc()
 # c)
 print('Contagem personalizada: ')
 n1 = int(input('Digite o início: '))
 n2 = int(input('Digite o fim: '))
 n3 = int(input('Digite o passo: '))
 contador(n1, n2, n3)
-esc()
+
