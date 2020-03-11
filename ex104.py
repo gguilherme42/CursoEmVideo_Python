@@ -7,3 +7,17 @@ para aceitar apenas um valor numérico
 Ex.:
 n = leiaInt('Digite um n')
 '''
+
+
+def leiaInt(n):
+    while True:
+        n = input('Digite um número: ')
+        if n != int:
+            print('Digite um valor inteiro')
+        else:
+            break
+    return n
+
+
+num = leiaInt('Digite um número: ')
+
