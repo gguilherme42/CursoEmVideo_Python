@@ -8,15 +8,24 @@ nas eleições.
 
 
 def voto(nasc):
+    """
+    -> Função para ver se o voto  eleitoral é é não obrigatório,
+        obrigatório ou opcional.
+        - Calcula a idade de acordo com o ano atual do sistema.
+    :param nasc: ano de nascimento
+    :return: retorna uma string dizendo a idade e a situação de voto
+    """
     from datetime import date
     id = date.today().year - nasc
     if 18 > id >= 16 or id >= 65:
-        print(f'Com {id} anos: VOTO OPCIONAL')
+        return f'Com {id} anos: VOTO OPCIONAL'
     elif 65 > id >= 18:
-        print(f'Com {id} anos: VOTO OBRIGATÓRIO')
+        return f'Com {id} anos: VOTO OBRIGATÓRIO'
     elif id < 16:
-        print(f'Com {id} anos: VOTO NEGADO')
+        return f'Com {id} anos: VOTO NEGADO'
 
 
 n = int(input('Digite o ano de nascimento: '))
-voto(n)
+print(voto(n))
+
+help(voto)
