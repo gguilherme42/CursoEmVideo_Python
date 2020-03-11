@@ -10,6 +10,12 @@ n = leiaInt('Digite um n')
 
 
 def leiaInt (f):
+    """
+    -> Função que lê número inteiros digitados pela teclado.
+     Caso o valor digitado não seja inteiro, a função não retornará o valor
+    :param f: Mensagem digitada para a leitura de valores inteiros
+    :return valor: Retorna o valor inteiro digitado pela teclado
+    """
     ok = False
     valor = 0
     while True:
@@ -24,4 +30,3 @@ def leiaInt (f):
 
 
 num = leiaInt('Digite um número: ')
-
