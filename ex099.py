@@ -17,7 +17,7 @@ def maior(num):
         for i, n in enumerate(num):
             if i == 0:
                 mai = n
-            elif num[i] > mai:
+            if num[i] > mai:
                 mai = num[i]
         print('Analisando valores...')
         sleep(0.5)
