@@ -7,3 +7,7 @@ se encerrará.
 
 Obs: Use cores.
 '''
+
+def minis(n):
+
+    help(n)
