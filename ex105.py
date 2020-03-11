@@ -23,27 +23,17 @@ def notas(*n, sit=False):
     :param sit: (opcional) se True, mostra a situação de acordo com as notas
     :return: retorna um dicionário com o que foi calculado
     """
-    t = len(n)
-    s = mai = 0
-    men = 0
     dicio = {}
-    for i, c in enumerate(n):
-        if i == 0:
-            mai = men = c
-        if n[i] > mai:
-            mai = c
-        if n[i] < men:
-            men = c
-        s += c
-    med = s / t
-    dicio['quantidade'] = t
-    dicio['maior'] = mai
-    dicio['menor'] = men
-    dicio['média'] = med
+    dicio['quantidade'] = len(n)
+    dicio['maior'] = max(n)
+    dicio['menor'] = min(n)
+    dicio['média'] = sum(n) / dicio['quantidade']
     # Se 'sit' for verdadeiro
     if sit:
-        if med >= 7:
+        if dicio['média'] >= 7:
             dicio['situação'] = 'BOA'
+        elif 4 > dicio['média'] < 7:
+            dicio['situação'] = 'RAZOÁVEL'
         else:
             dicio['situação'] = 'RUIM'
     return dicio
