@@ -17,19 +17,15 @@ def fatorial(num=1, show=False):
     :return: retorna o valor do fatoria de um número.
     """
     f = 1
-    if show == True:
-        for c in range(num, 0, - 1):
+    for c in range(num, 0, -1):
+        if show:
+            print(f'{c}', end='')
             if c > 1:
-                print(f'{c} x ', end='')
+               print(' x ', end='')
             else:
-                print(f'{c} =', end=' ')
-            f *= c
-        return print(f'{f}')
-    else:
-        for c in range(num, 0, - 1):
-            print(f'{c} x ', end='')
-            f *= c
-        return f
+               print(' = ', end='')
+        f *= c
+    return print(f'{f}')
 
 
 n = int(input('Fatorial de qual número: '))
