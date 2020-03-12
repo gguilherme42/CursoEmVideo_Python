@@ -15,30 +15,29 @@ Adicione também as docstrings da função
 def notas(*n, sit=False):
     """
     -> Função para calcular notas, onde:
-        - É calculado a maior nota
-        - É calculado a menor nota
-        - É calculado a média
-        - É calculado a situação
-    :param *n: múltiplos parâmetros numéricos
-    :param sit: (opcional) se True, mostra a situação de acordo com as notas
-    :return: retorna um dicionário com o que foi calculado
+     É calculado a maior nota.
+     É calculado a menor nota.
+     É calculado a média.
+     É calculado a situação.
+    :param *n: múltiplos parâmetros numéricos.
+    :param sit: (opcional) se True, mostra a situação de acordo com as notas.
+    :return: retorna um dicionário com o que foi calculado.
     """
-    dicio = {}
-    dicio['quantidade'] = len(n)
-    dicio['maior'] = max(n)
-    dicio['menor'] = min(n)
-    dicio['média'] = sum(n) / dicio['quantidade']
+    l = dict()
+    l['quantidade'] = len(n)
+    l['maior'] = max(n)
+    l['menor'] = min(n)
+    l['média'] = sum(n) / l['quantidade']
     # Se 'sit' for verdadeiro
     if sit:
-        if dicio['média'] >= 7:
-            dicio['situação'] = 'BOA'
-        elif dicio['média'] >= 5:
-            dicio['situação'] = 'RAZOÁVEL'
+        if l['média'] >= 7:
+            l['situação'] = 'BOA'
+        elif l['média'] >= 5:
+            l['situação'] = 'RAZOÁVEL'
         else:
-            dicio['situação'] = 'RUIM'
-    return dicio
+            l['situação'] = 'RUIM'
+    return l
 
 
-notas(1, 2, 3, 5, 6, 7, sit=True)
+notas(1, 2, 3, 5, 6, 7)
 print(notas)
-

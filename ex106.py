@@ -7,34 +7,38 @@ se encerrará.
 
 Obs: Use cores.
 '''
-dicio = {'fAzul': '\033[1;30;44m', 'fAma': '\033[1;30;43m',
-        'fBran': '\033[1;7;30m', 'fP': '\033[m'}
+c = ('\033[1;30;44m',  # 0 - Fundo azul, letras brancas em negrito.
+     '\033[1;30;43m',  # 1 - Fundo amarelo, letras brancas em negrito.
+     '\033[1;30;7m',   # 2 - Fundo branco, letras pretas em negrito.
+     '\033[m',   # 3 - Fundo e letras padrão.
+     )
 
-def sys(f):
-    global dicio
-    c = len(f)
-    print(end=f'{dicio["fP"]}')
-    print(f'{dicio["fAma"]}~' * c)
-    print(f'{f}')
-    print('~' * c)
-    print(end=f'{dicio["fP"]}')
+
+def tit(f, cor=3):
+    global c
+    t = len(f) + 4
+    print(c[cor], end='')
+    print('~' * t)
+    print(f'    {f}')
+    print('~' * t)
+    print(c[3], end='')
+
 
 def minis(n):
-    global dicio
-    fra = f'Acessando o manual do comeando {n}'
-    t = len(fra)
-    print(f'{dicio["fAzul"]}~' * t)
-    print(f'{fra}')
-    print('~' * t)
-    print(f'{dicio["fP"]}', end='')
-    print(f'{dicio["fBran"]}')
-    print(f'{help(n)}')
+    from time import sleep
+    tit(f'Acessoando o  comando {n}', 0)
+    sleep(0.5)
+    # Não se usa a função tit() no help, porque ele mostra um texto extenso
+    print(c[2], end='')
+    print(help(n))
+    print(c[3], end='')
 
 
 while True:
-    sys('   SISTEMA DE AJUDA PyHELP   ')
-    sis = str(input('Função ou Biblioteca >'))
-    if sis in 'FIM':
+    tit('SISTEMA DE AJUDA PyHELP', 1)
+    com = str(input('Função ou Biblioteca >'))
+    if com.upper() == 'FIM':
         break
     else:
-        minis(sis)
+        minis(com)
+tit('ATÉ LOGO!')
