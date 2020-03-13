@@ -3,7 +3,9 @@ Exercício 107:
     Crie um módulo chamado moeda.py que tenha as funções aumentar(),
     diminuir(), dobro() e metade(). Faça também um programa que importe
     este módulo e algumas funções.
-'''def aumentar(n, a):
+'''
+
+def aumentar(n, a):
     c = (n * a) / 100
     l = c + n
     return f'R${l:.2f}'
