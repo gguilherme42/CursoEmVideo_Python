@@ -1,10 +1,11 @@
 '''
 Exercício 110:
-    Adicione ao módulo moeda.py criado nos desafios anteriores,
-    uma função chamada resumo(), que mostre na tela algumas informações
-    geradas pela funções que já temos no módulo criado até aqui.
-'''
+    Crie um pacote chamado utilidadezCeV que tenha dois
+    módulos internos chamados moeda e dado.
 
+    Transfira todas as funções utilizadas nos desafios 107,
+    108 e 109 para o primeiro pacote e mantenha tudo funcionando.
+'''
 
 
 def moeda(n=0, moeda='R$'):

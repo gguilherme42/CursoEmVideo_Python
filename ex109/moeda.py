@@ -1,5 +1,8 @@
 '''
 Exercício 109:
+    Modifique as funções que foram criadas o desafio 107 para que elas aceitem
+    um parâmetro a mais, informando se o valor passado para elas vai ser ou não
+    formatado pela função moeda() criada no exercício 108.
 '''
 
 
@@ -10,37 +13,20 @@ def moeda(n=0, moeda='R$'):
 def aumentar(n=0, a=0, f=True):
     c = (n * a) / 100
     l = c + n
-    if not f:
-        return l
-    else:
-        return moeda(l)
+    return l if not f else moeda(l)
 
 
 def diminuir(n=0, a=0, f=True):
     c = (n * a) / 100
     l = n - c
-    if not f:
-        return l
-    else:
-        return moeda(l)
+    return l if not f else moeda(l)
 
 
 def dobro(n=0, f=True):
     d = n * 2
-    if not f:
-        return d
-    else:
-        return moeda(d)
-
+    return d if not f else moeda(d)
 
 
 def metade(n=0, f=True):
     m = n / 2
-    if not f:
-        return m
-    else:
-        return moeda(m)
-
-
-
-
+    return m if not f else moeda(m)
