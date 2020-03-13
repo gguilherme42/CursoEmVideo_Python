@@ -16,22 +16,28 @@ def leiaInt (f):
     while True:
         try:
             valor = int(input(f))
-        except (ValueError, TypeError, KeyboardInterrupt):
+        except (ValueError, TypeError):
             print('Erro: Digite um valor inteiro!')
+            # continue joga de novo para o while
+            continue
+        except KeyboardInterrupt:
+            return 0
         else:
-            break
-    return valor
+            # O return quebra o laço
+            return valor
 
 
 def leiaFloat(msg):
     while True:
         try:
             valor = float(input(msg))
-        except (ValueError, TypeError, KeyboardInterrupt):
+        except (ValueError, TypeError):
             print('Erro: Digite um valor real!')
+            continue
+        except KeyboardInterrupt:
+            return 0
         else:
-            break
-    return valor
+            return valor
 
 
 n = leiaFloat('Digite um valor real: ')
