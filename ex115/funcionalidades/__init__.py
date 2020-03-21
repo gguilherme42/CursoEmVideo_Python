@@ -1,5 +1,5 @@
 arq = []
-pessoas = 0
+
 
 
 def pedenome(msg='Nome: '):
@@ -58,7 +58,6 @@ def novo():
     idade = pedeidade()
     # Trata o nome e o telefone como elementos uma lista
     arq.append([nome, idade])
-    pessoas += 1
     grava()
     outraleitura()
 
