@@ -14,11 +14,11 @@ def cores(f, cor=4):
     return f'{c[cor]}{f}{c[3]}'
 
 
-def escreve(msg=''):
+def escreve(msg='', ic='='):
     from time import sleep
     global c
     sleep(0.25)
-    print(f'{cores("=", 6)}'*30)
-    print(f'{cores(msg, 5):^15}')
-    print(f'{cores("=", 6)}'*30)
+    print(f'{cores(ic, 4)}'*30)
+    print(f'{cores(msg, 4):^40}')
+    print(f'{cores(ic, 4)}'*30)
     sleep(0.25)
