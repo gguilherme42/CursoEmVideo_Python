@@ -1,4 +1,3 @@
-lista = []
 arq = []
 pessoas = 0
 
@@ -54,11 +53,11 @@ def pesquisa(nome):
 
 
 def novo():
-    global lista, pessoas
+    global arq, pessoas
     nome = pedenome()
     idade = pedeidade()
     # Trata o nome e o telefone como elementos uma lista
-    lista.append([nome, idade])
+    arq.append([nome, idade])
     pessoas += 1
     grava()
     outraleitura()
@@ -66,36 +65,22 @@ def novo():
 
 def grava():
     from purpurina import cores
-    global lista
+    global arq
     try:
         arquivo = open('sistema.txt', 'w', encoding='utf-8')
     except Exception as erro:
         print(f'{cores("Erro:", 7)} {erro}')
     else:
-        for i, v in enumerate(lista):
+        for i, v in enumerate(arq):
             arquivo.write(f'{v[0]}-{v[1]}\n')
         arquivo.close()
 
 
-# def leitura():
-#     from purpurina import cores
-#     global lista
-#     lista = []
-#     try:
-#         arquivoSalvo = open('sistemasalvo.txt', 'r', encoding='utf-8')
-#     except:
-#         print(f'{cores("Não há arquivo.",7)}')
-#     else:
-#         for v in arquivoSalvo.readlines():
-#             nome, idade = v.strip().split('-')
-#             lista.append([nome, idade])
-#         arquivoSalvo.close()
-#         listagem()
 
-
-def outraleitura():
+def leitura():
     from purpurina import cores
     global arq
+    arq = []
     try:
         arquivo = open('sistema.txt', 'r', encoding='utf-8')
         arquivoSalvo = open('sistemasalvo.txt', 'w', encoding='utf-8')
@@ -111,6 +96,7 @@ def outraleitura():
         print(arq)
         listagem()
 
+
 def listagem():
     from time import sleep
     from purpurina import cores
@@ -118,7 +104,7 @@ def listagem():
     sleep(0.25)
     print(f'{cores("-", 4) * 30}')
     for v in arq:
-            print(f'{v[0]:<5} {" " * 10} {v[1]:>5}')
+            print(f'{v[0]:<10} {" " * 15} {v[1]:>}')
     print(f'{cores("-", 4) * 30}')
     sleep(0.25)
 

@@ -12,11 +12,11 @@ import purpurina
 while True:
     op = funcionalidades.menu()
     if op == 1:
-        purpurina.escreve('LISTA')
-        funcionalidades.outraleitura()
+        purpurina.escreve('1 - LISTA')
+        funcionalidades.leitura()
     elif op == 2:
-        purpurina.escreve('NOVO CADASTRO')
+        purpurina.escreve('2 - NOVO CADASTRO')
         funcionalidades.novo()
     elif op == 3:
-        purpurina.escreve('Saindo...')
+        purpurina.escreve('3 - SAIR')
         break
