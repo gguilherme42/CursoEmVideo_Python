@@ -117,7 +117,7 @@ def listagem():
     sleep(0.25)
     print(f'{cores("-", 4) * 30}')
     for v in arq:
-            print(f'{v[0]} {" " * 25} {v[1]}')
+            print(f'{v[0]} {" " * 15} {v[1]}')
     print(f'{cores("-", 4) * 30}')
     sleep(0.25)
 
