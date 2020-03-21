@@ -59,6 +59,8 @@ def novo():
     # Trata o nome e o telefone como elementos uma lista
     lista.append([nome, idade])
     pessoas += 1
+    grava()
+    outraleitura()
 
 
 def grava():
@@ -87,6 +89,7 @@ def leitura():
             nome, idade = v.strip().split('-')
             lista.append([nome, idade])
         arquivoSalvo.close()
+        listagem()
 
 
 def outraleitura():

@@ -14,12 +14,9 @@ while True:
     if op == 1:
         purpurina.escreve('LISTA')
         funcionalidades.leitura()
-        funcionalidades.listagem()
     elif op == 2:
         purpurina.escreve('NOVO CADASTRO')
         funcionalidades.novo()
-        funcionalidades.grava()
-        funcionalidades.outraleitura()
     elif op == 3:
         purpurina.escreve('Saindo...')
         break
