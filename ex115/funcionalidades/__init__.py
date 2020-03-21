@@ -90,6 +90,7 @@ def leitura():
 
 
 def outraleitura():
+    from purpurina import cores
     try:
         arquivo = open('sistema.txt', 'r', encoding='utf-8')
         arquivoSalvo = open('sistemasalvo.txt', 'w', encoding='utf-8')
