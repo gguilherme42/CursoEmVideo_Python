@@ -94,6 +94,8 @@ def leitura():
 
 def outraleitura():
     from purpurina import cores
+    global arq
+    arq = []
     try:
         arquivo = open('sistema.txt', 'r', encoding='utf-8')
         arquivoSalvo = open('sistemasalvo.txt', 'w', encoding='utf-8')
@@ -101,10 +103,12 @@ def outraleitura():
         print(f'{cores("Erro:", 7)} {erro}')
     else:
         for l in arquivo.readlines():
-            arquivoSalvo.write(f'{l[0]}-{l[1]}\n')
+            nome, idade = l.strip().split('-')
+            arquivoSalvo.write(f'{nome}-{idade}\n')
+            arq.append([nome, idade])
         arquivo.close()
         arquivoSalvo.close()
-
+        print(arq)
 
 def listagem():
     from time import sleep
