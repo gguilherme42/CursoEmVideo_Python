@@ -44,8 +44,9 @@ def pedeidade(msg='Idade: '):
 
 
 def pesquisa(nome):
+    global arq
     mnome = nome.lower()
-    for i, v in enumerate(lista):
+    for i, v in enumerate(arq):
         t = v[0]
         if t.lower() == mnome:
             return i
@@ -76,20 +77,20 @@ def grava():
         arquivo.close()
 
 
-def leitura():
-    from purpurina import cores
-    global lista
-    lista = []
-    try:
-        arquivoSalvo = open('sistemasalvo.txt', 'r', encoding='utf-8')
-    except:
-        print(f'{cores("Não há arquivo.",7)}')
-    else:
-        for v in arquivoSalvo.readlines():
-            nome, idade = v.strip().split('-')
-            lista.append([nome, idade])
-        arquivoSalvo.close()
-        listagem()
+# def leitura():
+#     from purpurina import cores
+#     global lista
+#     lista = []
+#     try:
+#         arquivoSalvo = open('sistemasalvo.txt', 'r', encoding='utf-8')
+#     except:
+#         print(f'{cores("Não há arquivo.",7)}')
+#     else:
+#         for v in arquivoSalvo.readlines():
+#             nome, idade = v.strip().split('-')
+#             lista.append([nome, idade])
+#         arquivoSalvo.close()
+#         listagem()
 
 
 def outraleitura():
@@ -109,11 +110,12 @@ def outraleitura():
         arquivo.close()
         arquivoSalvo.close()
         print(arq)
+        listagem()
 
 def listagem():
     from time import sleep
     from purpurina import cores
-    global lista
+    global arq
     sleep(0.25)
     print(f'{cores("-", 4) * 30}')
     for v in arq:
