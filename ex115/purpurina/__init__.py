@@ -12,3 +12,13 @@ c = ('\033[1;30;44m',  # 0  Fundo azul, letras brancas em negrito.
 def cores(f, cor=4):
     global c
     return f'{c[cor]}{f}{c[3]}'
+
+
+def escreve(msg=''):
+    from time import sleep
+    global c
+    sleep(0.25)
+    print(f'{cores("=", 6)}'*30)
+    print(f'{cores(msg, 5):^15}')
+    print(f'{cores("=", 6)}'*30)
+    sleep(0.25)
