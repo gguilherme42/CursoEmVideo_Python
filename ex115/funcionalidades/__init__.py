@@ -96,7 +96,6 @@ def grava():
 def outraleitura():
     from purpurina import cores
     global arq
-    arq = []
     try:
         arquivo = open('sistema.txt', 'r', encoding='utf-8')
         arquivoSalvo = open('sistemasalvo.txt', 'w', encoding='utf-8')
