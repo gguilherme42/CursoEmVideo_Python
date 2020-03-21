@@ -19,6 +19,7 @@ while True:
         purpurina.escreve('NOVO CADASTRO')
         funcionalidades.novo()
         funcionalidades.grava()
+        funcionalidades.outraleitura()
     elif op == 3:
         purpurina.escreve('Saindo...')
         break

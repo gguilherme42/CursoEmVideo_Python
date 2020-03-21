@@ -65,16 +65,13 @@ def grava():
     from purpurina import cores
     global lista
     try:
-        arquivo = open('sitema.txt', 'w', encoding='utf-8')
-        arquivoSalvo = open('sitemasalvo.txt', 'w', encoding='utf-8')
+        arquivo = open('sistema.txt', 'w', encoding='utf-8')
     except Exception as erro:
         print(f'{cores("Erro:", 7)} {erro}')
     else:
         for i, v in enumerate(lista):
             arquivo.write(f'{v[0]}-{v[1]}\n')
-            arquivoSalvo.write(f'{v[0]}-{v[1]}\n')
         arquivo.close()
-        arquivoSalvo.close()
 
 
 def leitura():
@@ -82,7 +79,7 @@ def leitura():
     global lista
     lista = []
     try:
-        arquivoSalvo = open('sitemasalvo.txt', 'r', encoding='utf-8')
+        arquivoSalvo = open('sistemasalvo.txt', 'r', encoding='utf-8')
     except:
         print(f'{cores("Não há arquivo.",7)}')
     else:
@@ -91,10 +88,11 @@ def leitura():
             lista.append([nome, idade])
         arquivoSalvo.close()
 
+
 def outraleitura():
     try:
-        arquivo = open('sitema.txt', 'r', encoding='utf-8')
-        arquivoSalvo = open('sitemasalvo.txt', 'w', encoding='utf-8')
+        arquivo = open('sistema.txt', 'r', encoding='utf-8')
+        arquivoSalvo = open('sistemasalvo.txt', 'w', encoding='utf-8')
     except Exception as erro:
         print(f'{cores("Erro:", 7)} {erro}')
     else:
@@ -102,6 +100,7 @@ def outraleitura():
             arquivoSalvo.write(f'{l[0]}-{l[1]}\n')
         arquivo.close()
         arquivoSalvo.close()
+
 
 def listagem():
     from time import sleep
