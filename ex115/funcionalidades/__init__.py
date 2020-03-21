@@ -1,4 +1,5 @@
 lista = []
+arq = []
 pessoas = 0
 
 
@@ -70,9 +71,8 @@ def grava():
         print(f'{cores("Erro:", 7)} {erro}')
     else:
         for i, v in enumerate(lista):
-            arquivo.write(f'{v[0]}-{v[1]}')
-            if pesquisa(v[0]) is None:
-                arquivoSalvo.write(f'{v[0]}-{v[1]}')
+            arquivo.write(f'{v[0]}-{v[1]}\n')
+            arquivoSalvo.write(f'{v[0]}-{v[1]}\n')
         arquivo.close()
         arquivoSalvo.close()
 
@@ -91,6 +91,17 @@ def leitura():
             lista.append([nome, idade])
         arquivoSalvo.close()
 
+def outraleitura():
+    try:
+        arquivo = open('sitema.txt', 'r', encoding='utf-8')
+        arquivoSalvo = open('sitemasalvo.txt', 'w', encoding='utf-8')
+    except Exception as erro:
+        print(f'{cores("Erro:", 7)} {erro}')
+    else:
+        for l in arquivo.readlines():
+            arquivoSalvo.write(f'{l[0]}-{l[1]}\n')
+        arquivo.close()
+        arquivoSalvo.close()
 
 def listagem():
     from time import sleep
@@ -98,8 +109,8 @@ def listagem():
     global lista
     sleep(0.25)
     print(f'{cores("-", 4) * 30}')
-    for v in lista:
-        print(f'{v[0]} {" " * 25} {v[1]}')
+    for v in arq:
+            print(f'{v[0]} {" " * 25} {v[1]}')
     print(f'{cores("-", 4) * 30}')
     sleep(0.25)
 
