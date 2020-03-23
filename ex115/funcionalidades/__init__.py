@@ -1,7 +1,6 @@
 arq = []
 
 
-
 def pedenome(msg='Nome: '):
     from purpurina import cores
     global lista
@@ -59,7 +58,7 @@ def novo():
     # Trata o nome e o telefone como elementos uma lista
     arq.append([nome, idade])
     grava()
-    outraleitura()
+    leitura()
 
 
 def grava():
@@ -73,7 +72,6 @@ def grava():
         for i, v in enumerate(arq):
             arquivo.write(f'{v[0]}-{v[1]}\n')
         arquivo.close()
-
 
 
 def leitura():
